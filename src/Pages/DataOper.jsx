@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { delPost, getPost } from '../API/PostAPI'
 import style from './data.module.css'
+import Forms from '../Component/Forms'
 
 function DataOper() {
     const [data,setData] =useState([])
@@ -11,7 +12,7 @@ function DataOper() {
             setData(res.data)
         }catch(error){
             console.log(error.message)
-            console.log(error.response.data)
+            // console.log(error.response.data)
         }
     }
     useEffect(()=>{
@@ -34,11 +35,7 @@ function DataOper() {
     
   return (
     <div className={style.mainDiv}>
-        <form className={style.form1} >
-            <input type="text" placeholder='Title'/>
-            <input type="text" placeholder='Body'/>
-            <button>Add</button>
-        </form>
+        <Forms setData={setData} data={data}/>
         <ul className={style.uldata}>
             {
                 data.map((curr)=>{

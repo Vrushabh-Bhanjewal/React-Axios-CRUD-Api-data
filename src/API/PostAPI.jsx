@@ -13,3 +13,7 @@ export const getPost=()=>{
 export const delPost=(id)=>{
     return japi.delete(`/posts/${id}`)
 }
+// post data
+export const dataPost=(data)=>{
+    return japi.post('/posts', data)
+}
