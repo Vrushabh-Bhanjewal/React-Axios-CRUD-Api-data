@@ -17,3 +17,7 @@ export const delPost=(id)=>{
 export const dataPost=(data)=>{
     return japi.post('/posts', data)
 }
+// update data
+export const updatePost=(id,data)=>{
+    return japi.put(`/posts/${id}`,data)
+}
